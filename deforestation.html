@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deforestation Prediction with Sentinel-1 – Benoit Ayi Attiogbe Atayi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; line-height: 1.6; background: #f7f7f7; }
+    header { padding: 1.5rem 10%; background: #111; color: #f5f5f5; }
+    a { color: #0b6efd; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .section { padding: 2rem 10%; max-width: 900px; }
+    .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.75rem; background: #eee; margin-bottom: 0.5rem; }
+    img { max-width: 100%; border-radius: 6px; margin: 1rem 0; }
+    .meta { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+    ul { padding-left: 1.1rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Deforestation Prediction with Sentinel-1 & Environmental Variables</h1>
+  <p>Radar remote sensing · Deep learning · Tropical forest monitoring</p>
+</header>
+
+<section class="section">
+  <p><a href="index.html">&larr; Back to portfolio</a></p>
+
+  <span class="tag">Remote Sensing</span>
+  <div class="meta">
+    Study areas: Laos & Colombia · Sensors: Sentinel-1 · Tools: Python, PyTorch, Google Earth Engine
+  </div>
+
+  <h2>Overview</h2>
+  <p>
+    This project explores how to predict near-term deforestation using radar imagery and environmental variables.
+    I combined Sentinel-1 time series with auxiliary layers (topography, accessibility, previous alerts) to train
+    a deep learning model that highlights areas at risk of forest loss.
+  </p>
+
+  <h2>Data</h2>
+  <ul>
+    <li>Sentinel-1 VH/VV time series (backscatter, coherence).</li>
+    <li>Environmental covariates: elevation, slope, distance to roads/settlements, protected areas.</li>
+    <li>Historical deforestation alerts used as labels/targets.</li>
+  </ul>
+
+  <h2>Method</h2>
+  <ul>
+    <li>Data preprocessing and feature engineering in Google Earth Engine.</li>
+    <li>Patch-based deep learning model implemented in PyTorch.</li>
+    <li>Evaluation using ROC/AUC and spatial validation in different regions.</li>
+  </ul>
+
+  <h2>Results</h2>
+  <p>
+    The model captured spatial patterns of deforestation risk around roads, edges of protected areas, and frontier
+    expansion zones. The results can support prioritising monitoring and enforcement in vulnerable regions.
+  </p>
+
+  <h2>Media</h2>
+  <p>
+    <img src="deforestation.png" alt="Deforestation prediction map">
+    <!-- Optional additional image -->
+    <!-- <img src="deforestation_2.png" alt="Model performance and ROC curve"> -->
+  </p>
+</section>
+</body>
+</html>
