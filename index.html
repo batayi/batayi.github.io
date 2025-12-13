@@ -27,6 +27,23 @@
     a.card-link { text-decoration: none; color: inherit; }
     a.card-link:hover .card { box-shadow: 0 2px 8px rgba(0,0,0,0.12); transform: translateY(-2px); transition: 0.15s ease; }
 
+    /* About section layout */
+    .about-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .about-photo {
+      width: 160px;
+      max-width: 100%;
+      border-radius: 999px;   /* circular */
+      object-fit: cover;
+    }
+    .about-text {
+      flex: 1 1 260px;
+    }
+
     footer { padding: 1.5rem 10%; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; margin-top: 2rem; }
   </style>
 </head>
@@ -44,14 +61,25 @@
 
 <section id="about" class="section">
   <h2>About</h2>
-  <p>
-    I am a Geospatial Engineer with experience in 3D point-cloud processing, change detection, and remote sensing.
-    After a BSc in Geomatic Engineering in Ghana, I moved to Germany for an MSc in Geodetic Engineering
-    (University of Bonn) with a focus on Mobile Sensing, Robotics, and remote sensing.
-    My current work centres on multi-temporal point clouds, topographic change detection, and global
-    agro-environmental analysis. I am interested in roles in 3D mapping, geospatial data science,
-    and remote sensing R&D in Europe.
-  </p>
+  <div class="about-wrapper">
+    <img
+      src="PXL_20210217_133805848.PORTRAIT.jpg"
+      alt="Portrait of Benoit Ayi Attiogbe Atayi"
+      class="about-photo"
+    >
+    <div class="about-text">
+      <p>
+        I am a Geospatial Engineer with experience in 3D point-cloud processing, change detection, and remote sensing.
+        After a BSc in Geomatic Engineering in Ghana, I moved to Germany for an MSc in Geodetic Engineering
+        (University of Bonn) with a focus on Mobile Sensing, Robotics, and remote sensing.
+      </p>
+      <p>
+        My current work centres on multi-temporal point clouds, topographic change detection, and global
+        agro-environmental analysis. I am interested in roles in 3D mapping, geospatial data science,
+        and remote sensing R&D in Europe.
+      </p>
+    </div>
+  </div>
 </section>
 
 <section id="geo-projects" class="section">
@@ -65,7 +93,7 @@
       <div class="card">
         <span class="tag">3D Point Clouds</span>
         <h3>Topographic Change Classification from Multi-Temporal Point Clouds</h3>
-        <img src="isar_change.png" alt="Isar River topographic change map">
+        <img src="pseudolabels (1).png" alt="Pseudo-labelled multi-class topographic change map for the Isar River">
         <p>
           MSc thesis on the Isar River (Germany) using multi-temporal UAV photogrammetry and TLS data.
           Developed an unsupervised 3D pipeline (Siamese KPConv + DeepCluster) to classify erosion,
