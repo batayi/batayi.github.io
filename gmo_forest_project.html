@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Global GMO Adoption & Forest Cover – Benoit Ayi Attiogbe Atayi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; line-height: 1.6; background: #f7f7f7; }
+    header { padding: 1.5rem 10%; background: #111; color: #f5f5f5; }
+    a { color: #0b6efd; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .section { padding: 2rem 10%; max-width: 900px; }
+    .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.75rem; background: #eee; margin-bottom: 0.5rem; }
+    img { max-width: 100%; border-radius: 6px; margin: 1rem 0; }
+    .meta { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+    ul { padding-left: 1.1rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Global GMO Adoption & Forest Cover Integration</h1>
+  <p>Global panel dataset · Forest cover · GMO diffusion · R & Python</p>
+</header>
+
+<section class="section">
+  <p><a href="index.html">&larr; Back to portfolio</a></p>
+
+  <span class="tag">Global Data</span>
+  <div class="meta">
+    Scope: Global 1980s–2010s · Data: Forest cover, GMO adoption, population, GDP<br>
+    Tools: R, Python, GDAL, QGIS, multi-band GeoTIFFs
+  </div>
+
+  <h2>Overview</h2>
+  <p>
+    This project builds a global multi-year panel linking forest cover, GMO crop adoption, and socio-economic
+    variables at national and subnational levels. The goal is to provide a consistent dataset for analysing
+    long-term interactions between agriculture and forests.
+  </p>
+
+  <h2>Data Processing</h2>
+  <ul>
+    <li>Yearly forest cover rasters harmonised and stacked into multi-band GeoTIFFs.</li>
+    <li>GMO adoption maps by crop and year, normalised against crop area or yields.</li>
+    <li>Administrative boundaries and ecological zones (tropical vs non-tropical) used for aggregation.</li>
+    <li>Panel construction in R: ADM1/national, tropical/non-tropical splits.</li>
+  </ul>
+
+  <h2>Technical Stack</h2>
+  <ul>
+    <li>R for yearly aggregation and panel creation (`.RData` outputs).</li>
+    <li>Python for raster normalisation, masking, and multi-band stack generation.</li>
+    <li>GIS tools (QGIS, GDAL) for visual QC and map outputs.</li>
+  </ul>
+
+  <h2>Applications</h2>
+  <p>
+    The dataset enables analyses of how GMO adoption and agricultural intensification relate to deforestation
+    patterns, especially in tropical regions. It is structured for regression modelling and exploratory mapping.
+  </p>
+
+  <h2>Media</h2>
+  <p>
+    <img src="gmo_forest.png" alt="GMO adoption and forest cover analysis">
+    <!-- Optional additional image -->
+    <!-- <img src="gmo_forest_2.png" alt="Example ADM1-level time series"> -->
+  </p>
+</section>
+</body>
+</html>
