@@ -35,9 +35,9 @@
       align-items: flex-start;
     }
     .about-photo {
-      width: 220px;          /* ⬅️ increased from 160px */
+      width: 220px;
       max-width: 100%;
-      border-radius: 999px;  /* circular */
+      border-radius: 12px;  /* box with slightly rounded corners */
       object-fit: cover;
     }
     .about-text {
@@ -89,6 +89,7 @@
   </p>
 
   <div class="projects-grid">
+    <!-- Project 1 – Isar thesis -->
     <a href="isar_change.html" class="card-link">
       <div class="card">
         <span class="tag">3D Point Clouds</span>
@@ -102,19 +103,21 @@
       </div>
     </a>
 
+    <!-- Project 2 – 3D model of BOST facilities -->
     <a href="deforestation.html" class="card-link">
       <div class="card">
-        <span class="tag">Remote Sensing</span>
-        <h3>Deforestation Prediction with Sentinel-1 & Environmental Variables</h3>
-        <img src="deforestation.png" alt="Deforestation prediction map">
+        <span class="tag">3D Modelling</span>
+        <h3>3D Model of BOST Facilities – Akosombo, Ghana</h3>
+        <img src="deforestation.png" alt="3D model and orthomosaic of BOST facilities in Akosombo, Ghana">
         <p>
-          Combined Sentinel-1 radar time series with environmental covariates to predict near-term
-          deforestation risk in tropical forests in Laos and Colombia using deep learning and
-          Google Earth Engine for data preparation.
+          UAV photogrammetry project for Bulk Oil Storage and Transportation (BOST) facilities in Akosombo, Ghana.
+          Captured and processed drone imagery to generate a textured 3D model, orthomosaic, and elevation products
+          to support facility planning, inspection, and asset documentation.
         </p>
       </div>
     </a>
 
+    <!-- Project 3 – GMO & forest -->
     <a href="gmo_forest_project.html" class="card-link">
       <div class="card">
         <span class="tag">Global Data</span>
@@ -128,6 +131,7 @@
       </div>
     </a>
 
+    <!-- Project 4 – Web GIS -->
     <a href="webgis_apps.html" class="card-link">
       <div class="card">
         <span class="tag">Web GIS</span>
