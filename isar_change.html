@@ -14,6 +14,19 @@
     img { max-width: 100%; border-radius: 6px; margin: 1rem 0; }
     .meta { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
     ul { padding-left: 1.1rem; }
+
+    /* Row for side-by-side images */
+    .image-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .image-row img {
+      flex: 1 1 260px;   /* makes them same width and responsive */
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
   </style>
 </head>
 <body>
@@ -38,6 +51,12 @@
     unsupervised learning pipeline to distinguish erosion, deposition, vegetation change, and stable areas.
   </p>
 
+  <!-- FULL-REACH IMAGE DIRECTLY AFTER OVERVIEW -->
+  <p>
+    <img src="wholewhole1.png"
+         alt="Overview of multi-class topographic change along the Isar River">
+  </p>
+
   <h2>Data & Preprocessing</h2>
   <ul>
     <li>Two epochs of 3D point clouds from UAV photogrammetry and Terrestrial Laser Scanning.</li>
@@ -60,19 +79,14 @@
     support river monitoring and topographic change analysis without dense manual labels.
   </p>
 
-  <h2>Media</h2>
-  <p>
-    <img src="wholewhole1.png"
-         alt="Overview of multi-class topographic change along the Isar River">
-  </p>
-  <p>
+  <!-- TWO IMAGES SIDE BY SIDE IN RESULTS -->
+  <div class="image-row">
     <img src="binaryaoi.jpg"
          alt="Binary change mask (change vs no-change) in the area of interest">
-  </p>
-  <p>
     <img src="4classesaoimissclass.png"
          alt="Four-class change map and misclassification patterns in the area of interest">
-  </p>
+  </div>
+
 </section>
 </body>
 </html>
