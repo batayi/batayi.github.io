@@ -23,6 +23,10 @@
     .card h3 { margin-top: 0; margin-bottom: 0.4rem; }
     .card .tag { display: inline-block; padding: 0.1rem 0.45rem; border-radius: 999px; font-size: 0.75rem; background: #eee; margin-bottom: 0.4rem; }
 
+    /* Make whole cards clickable and add hover effect */
+    a.card-link { text-decoration: none; color: inherit; }
+    a.card-link:hover .card { box-shadow: 0 2px 8px rgba(0,0,0,0.12); transform: translateY(-2px); transition: 0.15s ease; }
+
     footer { padding: 1.5rem 10%; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; margin-top: 2rem; }
   </style>
 </head>
@@ -57,38 +61,44 @@
   </p>
 
   <div class="projects-grid">
-    <div class="card">
-      <span class="tag">Flight Testing & QA</span>
-      <h3>VTOL Hybrid & Fixed-Wing Flight Testing (Ghana)</h3>
-      <img src="uav_vtol.png" alt="VTOL UAV during flight test">
-      <p>
-        Planned and executed VLOS and BVLOS test campaigns for VTOL hybrid and fixed-wing UAVs
-        as Team Lead at SKT AeroShutter. Designed test plans, performed pre-flight and post-flight checks,
-        analysed PX4 flight logs, and reported issues to improve system reliability and safety.
-      </p>
-    </div>
+    <a href="uav_vtol.html" class="card-link">
+      <div class="card">
+        <span class="tag">Flight Testing & QA</span>
+        <h3>VTOL Hybrid & Fixed-Wing Flight Testing (Ghana)</h3>
+        <img src="uav_vtol.png" alt="VTOL UAV during flight test">
+        <p>
+          Planned and executed VLOS and BVLOS test campaigns for VTOL hybrid and fixed-wing UAVs
+          as Team Lead at SKT AeroShutter. Designed test plans, performed pre-flight and post-flight checks,
+          analysed PX4 flight logs, and reported issues to improve system reliability and safety.
+        </p>
+      </div>
+    </a>
 
-    <div class="card">
-      <span class="tag">UAV Mapping</span>
-      <h3>Corridor & Site Mapping for Infrastructure Clients</h3>
-      <img src="uav_corridor_mapping.png" alt="UAV corridor mapping orthomosaic">
-      <p>
-        Led UAV photogrammetry missions for infrastructure and mining clients, from mission planning and
-        GCP collection to data processing. Produced orthomosaics and DSM/DTMs in Pix4D/Metashape and integrated
-        results into GIS for engineering design and monitoring.
-      </p>
-    </div>
+    <a href="uav_corridor.html" class="card-link">
+      <div class="card">
+        <span class="tag">UAV Mapping</span>
+        <h3>Corridor & Site Mapping for Infrastructure Clients</h3>
+        <img src="uav_corridor_mapping.png" alt="UAV corridor mapping orthomosaic">
+        <p>
+          Led UAV photogrammetry missions for infrastructure and mining clients, from mission planning and
+          GCP collection to data processing. Produced orthomosaics and DSM/DTMs in Pix4D/Metashape and integrated
+          results into GIS for engineering design and monitoring.
+        </p>
+      </div>
+    </a>
 
-    <div class="card">
-      <span class="tag">Operations</span>
-      <h3>Operational Procedures & Checklists for UAV Teams</h3>
-      <img src="uav_checklist.png" alt="UAV preflight checklist and ground station">
-      <p>
-        Developed standardised pre-flight, in-flight, and post-flight procedures for multi-person UAV teams,
-        including risk assessment, equipment checks, and log-based issue tracking, improving mission consistency
-        and reducing operational incidents.
-      </p>
-    </div>
+    <a href="uav_ops.html" class="card-link">
+      <div class="card">
+        <span class="tag">Operations</span>
+        <h3>Operational Procedures & Checklists for UAV Teams</h3>
+        <img src="uav_checklist.png" alt="UAV preflight checklist and ground station">
+        <p>
+          Developed standardised pre-flight, in-flight, and post-flight procedures for multi-person UAV teams,
+          including risk assessment, equipment checks, and log-based issue tracking, improving mission consistency
+          and reducing operational incidents.
+        </p>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -99,48 +109,56 @@
   </p>
 
   <div class="projects-grid">
-    <div class="card">
-      <span class="tag">3D Point Clouds</span>
-      <h3>Topographic Change Classification from Multi-Temporal Point Clouds</h3>
-      <img src="isar_change.png" alt="Isar River topographic change map">
-      <p>
-        MSc thesis project on the Isar River (Germany), using multi-temporal UAV photogrammetry and TLS data.
-        Applied DeepCluster 3D Change Detection with a Siamese KPConv backbone to classify erosion, deposition,
-        vegetation change, and stable surfaces from high-resolution point clouds.
-      </p>
-    </div>
+    <a href="isar_change.html" class="card-link">
+      <div class="card">
+        <span class="tag">3D Point Clouds</span>
+        <h3>Topographic Change Classification from Multi-Temporal Point Clouds</h3>
+        <img src="isar_change.png" alt="Isar River topographic change map">
+        <p>
+          MSc thesis project on the Isar River (Germany), using multi-temporal UAV photogrammetry and TLS data.
+          Applied DeepCluster 3D Change Detection with a Siamese KPConv backbone to classify erosion, deposition,
+          vegetation change, and stable surfaces from high-resolution point clouds.
+        </p>
+      </div>
+    </a>
 
-    <div class="card">
-      <span class="tag">Remote Sensing</span>
-      <h3>Deforestation Prediction with Sentinel-1 & Environmental Variables</h3>
-      <img src="deforestation.png" alt="Deforestation prediction map">
-      <p>
-        Built a deep learning model combining Sentinel-1 radar imagery, environmental covariates, and satellite
-        alerts to predict near-term deforestation risks in tropical forests in Laos and Colombia.
-      </p>
-    </div>
+    <a href="deforestation.html" class="card-link">
+      <div class="card">
+        <span class="tag">Remote Sensing</span>
+        <h3>Deforestation Prediction with Sentinel-1 & Environmental Variables</h3>
+        <img src="deforestation.png" alt="Deforestation prediction map">
+        <p>
+          Built a deep learning model combining Sentinel-1 radar imagery, environmental covariates, and satellite
+          alerts to predict near-term deforestation risks in tropical forests in Laos and Colombia.
+        </p>
+      </div>
+    </a>
 
-    <div class="card">
-      <span class="tag">Global Data</span>
-      <h3>Global GMO Adoption & Forest Cover Integration</h3>
-      <img src="gmo_forest.png" alt="GMO adoption and forest cover analysis">
-      <p>
-        Processed multi-year global forest cover rasters and GMO adoption maps to build a panel dataset
-        at national and subnational level. Used R, Python, and GIS to aggregate, normalise, and visualise
-        long-term forest trends and agricultural intensification.
-      </p>
-    </div>
+    <a href="gmo_forest_project.html" class="card-link">
+      <div class="card">
+        <span class="tag">Global Data</span>
+        <h3>Global GMO Adoption & Forest Cover Integration</h3>
+        <img src="gmo_forest.png" alt="GMO adoption and forest cover analysis">
+        <p>
+          Processed multi-year global forest cover rasters and GMO adoption maps to build a panel dataset
+          at national and subnational level. Used R, Python, and GIS to aggregate, normalise, and visualise
+          long-term forest trends and agricultural intensification.
+        </p>
+      </div>
+    </a>
 
-    <div class="card">
-      <span class="tag">Web GIS</span>
-      <h3>Web GIS & Spatial Database Applications</h3>
-      <img src="webgis.png" alt="Web GIS dashboard">
-      <p>
-        Designed and implemented Web GIS applications using PostgreSQL/PostGIS, GeoServer, and Leaflet.
-        Focus on serving raster and vector layers through OGC services and building interactive dashboards
-        for exploration of environmental and socio-economic data.
-      </p>
-    </div>
+    <a href="webgis_apps.html" class="card-link">
+      <div class="card">
+        <span class="tag">Web GIS</span>
+        <h3>Web GIS & Spatial Database Applications</h3>
+        <img src="webgis.png" alt="Web GIS dashboard">
+        <p>
+          Designed and implemented Web GIS applications using PostgreSQL/PostGIS, GeoServer, and Leaflet.
+          Focus on serving raster and vector layers through OGC services and building interactive dashboards
+          for exploration of environmental and socio-economic data.
+        </p>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -172,7 +190,7 @@
   <h2>Contact</h2>
   <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
   <p>LinkedIn: <a href="https://www.linkedin.com/in/...">linkedin.com/in/…</a></p>
-  <p>GitHub: <a href="https://github.com/YOURUSERNAME">github.com/YOURUSERNAME</a></p>
+  <p>GitHub: <a href="https://github.com/batayi">github.com/batayi</a></p>
 </section>
 
 <footer>
@@ -183,4 +201,3 @@
 </script>
 </body>
 </html>
-
