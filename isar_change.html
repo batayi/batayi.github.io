@@ -49,7 +49,7 @@
     <li><strong>Goal –</strong> Classify topographic change along the Isar River (erosion, deposition, vegetation change, stable) instead of just “change / no-change”.</li>
     <li><strong>Data –</strong> Two epochs of UAV photogrammetry and TLS point clouds with M3C2-derived change metrics.</li>
     <li><strong>Workflow –</strong> Cylindrical sampling + geometric features → Encoder-Fusion Siamese KPConv + DeepCluster → clusters mapped to geomorphic classes.</li>
-    <li><strong>Result –</strong> Multi-class change maps revealing subtle erosion/deposition patterns beyond the binary change mask, improving interpretability for river monitoring.</li>
+    <li><strong>Result –</strong> Produced binary change/no-change maps and 4-class maps (erosion, deposition, vegetation change, stable/no-change) that reveal subtle erosion–deposition patterns and improve interpretability for river monitoring.</li>
   </ul>
 
   <!-- FULL-REACH IMAGE DIRECTLY AFTER OVERVIEW -->
@@ -75,9 +75,10 @@
 
   <h2>Results</h2>
   <p>
-    The model successfully highlighted subtle erosion and deposition patterns beyond binary change maps,
-    revealing spatially coherent geomorphic units. It demonstrates how unsupervised 3D deep learning can
-    support river monitoring and topographic change analysis without dense manual labels.
+    The workflow outputs both <strong>binary change/no-change maps</strong> and <strong>4-class geomorphic maps</strong>
+    (erosion, deposition, vegetation change, stable/no-change). These multi-class maps highlight subtle erosion
+    and deposition patterns beyond the binary change mask, revealing spatially coherent geomorphic units and
+    demonstrating how unsupervised 3D deep learning can support river monitoring without dense manual labels.
   </p>
 
   <!-- TWO IMAGES SIDE BY SIDE IN RESULTS -->
