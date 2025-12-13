@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Topographic Change from Multi-Temporal Point Clouds – Benoit Ayi Attiogbe Atayi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; line-height: 1.6; background: #f7f7f7; }
+    header { padding: 1.5rem 10%; background: #111; color: #f5f5f5; }
+    a { color: #0b6efd; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .section { padding: 2rem 10%; max-width: 900px; }
+    .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.75rem; background: #eee; margin-bottom: 0.5rem; }
+    img { max-width: 100%; border-radius: 6px; margin: 1rem 0; }
+    .meta { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+    ul { padding-left: 1.1rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Topographic Change Classification from Multi-Temporal Point Clouds</h1>
+  <p>Unsupervised 3D change detection · Siamese KPConv · DeepCluster</p>
+</header>
+
+<section class="section">
+  <p><a href="index.html">&larr; Back to portfolio</a></p>
+
+  <span class="tag">3D Point Clouds</span>
+  <div class="meta">
+    MSc Thesis – University of Bonn & TUM · Study area: Isar River, Germany<br>
+    Data: UAV photogrammetry & TLS point clouds – two epochs
+  </div>
+
+  <h2>Overview</h2>
+  <p>
+    This MSc thesis focuses on classifying topographic changes along a river corridor using multi-temporal
+    high-resolution point clouds. I used an Encoder-Fusion Siamese KPConv backbone with a DeepCluster-style
+    unsupervised learning pipeline to distinguish erosion, deposition, vegetation change, and stable areas.
+  </p>
+
+  <h2>Data & Preprocessing</h2>
+  <ul>
+    <li>Two epochs of 3D point clouds from UAV photogrammetry and Terrestrial Laser Scanning.</li>
+    <li>M3C2-based change metrics used as reference for binary change/no-change masks.</li>
+    <li>Cylindrical sampling of the scene into local 3D neighborhoods for training.</li>
+    <li>Hand-crafted geometric features (planarity, omnivariance, height rank, etc.).</li>
+  </ul>
+
+  <h2>Method</h2>
+  <ul>
+    <li>Encoder-Fusion Siamese KPConv network for learning 3D embeddings of before/after point clouds.</li>
+    <li>DeepCluster-style loop to cluster embeddings and refine pseudo-labels.</li>
+    <li>Post-processing and mapping of clusters to geomorphic classes (erosion, deposition, vegetation change, stable).</li>
+  </ul>
+
+  <h2>Results</h2>
+  <p>
+    The model successfully highlighted subtle erosion and deposition patterns beyond binary change maps,
+    revealing spatially coherent geomorphic units. It demonstrates how unsupervised 3D deep learning can
+    support river monitoring and topographic change analysis without dense manual labels.
+  </p>
+
+  <h2>Media</h2>
+  <p>
+    <img src="isar_change.png" alt="Isar River topographic change map">
+    <!-- Optional additional image -->
+    <!-- <img src="isar_change_2.png" alt="Clustered 3D point cloud classification"> -->
+  </p>
+</section>
+</body>
+</html>
