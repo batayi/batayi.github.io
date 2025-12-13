@@ -45,11 +45,12 @@
   </div>
 
   <h2>Overview</h2>
-  <p>
-    This MSc thesis focuses on classifying topographic changes along a river corridor using multi-temporal
-    high-resolution point clouds. I used an Encoder-Fusion Siamese KPConv backbone with a DeepCluster-style
-    unsupervised learning pipeline to distinguish erosion, deposition, vegetation change, and stable areas.
-  </p>
+  <ul>
+    <li><strong>Goal –</strong> Classify topographic change along the Isar River (erosion, deposition, vegetation change, stable) instead of just “change / no-change”.</li>
+    <li><strong>Data –</strong> Two epochs of UAV photogrammetry and TLS point clouds with M3C2-derived change metrics.</li>
+    <li><strong>Workflow –</strong> Cylindrical sampling + geometric features → Encoder-Fusion Siamese KPConv + DeepCluster → clusters mapped to geomorphic classes.</li>
+    <li><strong>Result –</strong> Multi-class change maps revealing subtle erosion/deposition patterns beyond the binary change mask, improving interpretability for river monitoring.</li>
+  </ul>
 
   <!-- FULL-REACH IMAGE DIRECTLY AFTER OVERVIEW -->
   <p>
