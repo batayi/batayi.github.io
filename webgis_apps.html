@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web GIS & Spatial Database Applications – Benoit Ayi Attiogbe Atayi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; line-height: 1.6; background: #f7f7f7; }
+    header { padding: 1.5rem 10%; background: #111; color: #f5f5f5; }
+    a { color: #0b6efd; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .section { padding: 2rem 10%; max-width: 900px; }
+    .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.75rem; background: #eee; margin-bottom: 0.5rem; }
+    img { max-width: 100%; border-radius: 6px; margin: 1rem 0; }
+    .meta { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+    ul { padding-left: 1.1rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Web GIS & Spatial Database Applications</h1>
+  <p>PostGIS · GeoServer · Leaflet · Interactive maps & dashboards</p>
+</header>
+
+<section class="section">
+  <p><a href="index.html">&larr; Back to portfolio</a></p>
+
+  <span class="tag">Web GIS</span>
+  <div class="meta">
+    Stack: PostgreSQL/PostGIS, GeoServer, Leaflet/JavaScript<br>
+    Focus: Serving raster & vector data through OGC services to web clients
+  </div>
+
+  <h2>Overview</h2>
+  <p>
+    I developed Web GIS applications that expose spatial data through APIs and map services, allowing users
+    to explore environmental and socio-economic datasets interactively in a browser.
+  </p>
+
+  <h2>Architecture</h2>
+  <ul>
+    <li>PostgreSQL/PostGIS as the main spatial database.</li>
+    <li>GeoServer configured to serve WMS/WFS/WCS layers.</li>
+    <li>Leaflet-based frontends consuming OGC services and custom REST endpoints.</li>
+  </ul>
+
+  <h2>Features</h2>
+  <ul>
+    <li>Layer switching and styling (base maps, thematic layers, overlays).</li>
+    <li>Attribute inspection and basic querying (identify, filter by attributes).</li>
+    <li>Time-sliders or controls for multi-year datasets where relevant.</li>
+    <li>Custom symbology for highlighting forest change, agricultural intensity, or other indicators.</li>
+  </ul>
+
+  <h2>Example Use Cases</h2>
+  <p>
+    Web GIS dashboards for:
+  </p>
+  <ul>
+    <li>Visualising forest change and deforestation risk layers.</li>
+    <li>Exploring agricultural adoption and yield patterns.</li>
+    <li>Serving internal mapping products to non-GIS users.</li>
+  </ul>
+
+  <h2>Media</h2>
+  <p>
+    <img src="webgis.png" alt="Web GIS dashboard">
+    <!-- Optional additional image -->
+    <!-- <img src="webgis_2.png" alt="Layer control and attribute query example"> -->
+  </p>
+</section>
+</body>
+</html>
