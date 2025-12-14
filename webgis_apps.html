@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Web GIS & Spatial Database Applications – Benoit Ayi Attiogbe Atayi</title>
+  <title>Web GIS for Experimental Fields – Campus Klein Altendorf – Benoit Ayi Attiogbe Atayi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; line-height: 1.6; background: #f7f7f7; }
@@ -18,8 +18,8 @@
 </head>
 <body>
 <header>
-  <h1>Web GIS & Spatial Database Applications</h1>
-  <p>PostGIS · GeoServer · Leaflet · Interactive maps & dashboards</p>
+  <h1>Web GIS for Experimental Fields – Campus Klein Altendorf</h1>
+  <p>Web GIS · WFS + database integration · Ontology-driven search</p>
 </header>
 
 <section class="section">
@@ -27,47 +27,81 @@
 
   <span class="tag">Web GIS</span>
   <div class="meta">
-    Stack: PostgreSQL/PostGIS, GeoServer, Leaflet/JavaScript<br>
-    Focus: Serving raster & vector data through OGC services to web clients
+    Course project: Geo-Information Management in Interdisciplinary Research Context (Uni Bonn)<br>
+    Role: Implementation of the web map and Java backend integration (WFS + database + ontology)
   </div>
 
   <h2>Overview</h2>
-  <p>
-    I developed Web GIS applications that expose spatial data through APIs and map services, allowing users
-    to explore environmental and socio-economic datasets interactively in a browser.
-  </p>
-
-  <h2>Architecture</h2>
   <ul>
-    <li>PostgreSQL/PostGIS as the main spatial database.</li>
-    <li>GeoServer configured to serve WMS/WFS/WCS layers.</li>
-    <li>Leaflet-based frontends consuming OGC services and custom REST endpoints.</li>
+    <li><strong>Goal –</strong> Provide an interactive Web GIS for the experimental fields at Campus Klein Altendorf, allowing researchers to explore field trials spatially and access rich metadata.</li>
+    <li><strong>Data –</strong> Field geometries from a GeoServer WFS (layer <code>geo:fields</code>) and non-spatial attributes from a relational database (fields, species, treatments).</li>
+    <li><strong>Workflow –</strong> Fetch WFS + DB data → combine into GeoJSON → display in a web map with popups, ontology links and search → fetch live weather info for the current map view.</li>
+    <li><strong>Result –</strong> A prototype Web GIS where users can click on fields to see crop information, open ontology descriptions, search by keywords and view current weather conditions over the site.</li>
   </ul>
 
-  <h2>Features</h2>
+  <!-- MAIN IMAGE (screenshot of the web map) -->
+  <img src="webgis.png"
+       alt="Web GIS prototype showing experimental fields, popups and tools at Campus Klein Altendorf">
+
+  <h2>Data Integration</h2>
   <ul>
-    <li>Layer switching and styling (base maps, thematic layers, overlays).</li>
-    <li>Attribute inspection and basic querying (identify, filter by attributes).</li>
-    <li>Time-sliders or controls for multi-year datasets where relevant.</li>
-    <li>Custom symbology for highlighting forest change, agricultural intensity, or other indicators.</li>
+    <li>Used a <strong>Web Feature Service (WFS)</strong> from GeoServer to obtain field geometries and IDs for the Campus Klein Altendorf experimental plots.</li>
+    <li>Joined WFS features with attributes from three database tables:
+      <ul>
+        <li><strong>Fields</strong> – field IDs, soil types, management info</li>
+        <li><strong>Species</strong> – plant species and varieties used in each plot</li>
+        <li><strong>Treatments</strong> – treatment types (e.g. fertilizer, sowing, management)</li>
+      </ul>
+    </li>
+    <li>Combined spatial and non-spatial data into a <strong>GeoJSON</strong> structure (geometry + properties) consumed directly by the web map.</li>
   </ul>
 
-  <h2>Example Use Cases</h2>
-  <p>
-    Web GIS dashboards for:
-  </p>
+  <h2>Web Map & Backend</h2>
   <ul>
-    <li>Visualising forest change and deforestation risk layers.</li>
-    <li>Exploring agricultural adoption and yield patterns.</li>
-    <li>Serving internal mapping products to non-GIS users.</li>
+    <li>Implemented the backend in <strong>Java</strong> to:
+      <ul>
+        <li>Request WFS data and parse GML for field geometries.</li>
+        <li>Query the relational database and merge selected columns into feature properties.</li>
+        <li>Output a cleaned GeoJSON feed for the client map.</li>
+      </ul>
+    </li>
+    <li>Built the web map front-end with a JavaScript mapping library (Leaflet-style layout), including:
+      <ul>
+        <li>Base map layer.</li>
+        <li>Field polygons styled by field boundaries.</li>
+        <li>Attribute popups with crop, soil and treatment information.</li>
+      </ul>
+    </li>
   </ul>
 
-  <h2>Media</h2>
-  <p>
-    <img src="webgis.png" alt="Web GIS dashboard">
-    <!-- Optional additional image -->
-    <!-- <img src="webgis_2.png" alt="Layer control and attribute query example"> -->
-  </p>
+  <h2>Ontology & Search</h2>
+  <ul>
+    <li>Connected the map to an ontology hosted in <strong>Apache Jena Fuseki</strong>, created in Protégé and stored as RDF.</li>
+    <li>Exposed ontology descriptions of crops, treatments and related concepts via:
+      <ul>
+        <li>Links in the attribute popup that open ontology descriptions with English and German labels.</li>
+        <li>A search bar that triggers <strong>SPARQL</strong> queries to highlight relevant fields based on a keyword.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Weather Information</h2>
+  <ul>
+    <li>Added a weather widget accessible via a map icon to show current conditions over the site:
+      <ul>
+        <li>Date, temperature, humidity and wind speed.</li>
+      </ul>
+    </li>
+    <li>Designed this as an extra context layer to support interpretation of crop conditions on the day of inspection.</li>
+  </ul>
+
+  <h2>Impact</h2>
+  <ul>
+    <li>Provides a single entry point where researchers can explore experimental fields spatially and see key attributes at a glance.</li>
+    <li>Demonstrates how <strong>WFS + relational databases + ontologies</strong> can be combined into a FAIR, discoverable geospatial data system.</li>
+    <li>Showcases your ability to build a full Web GIS prototype: backend integration, GeoJSON generation, interactive map, search and external services.</li>
+  </ul>
+
 </section>
 </body>
 </html>
