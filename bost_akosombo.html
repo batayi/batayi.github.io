@@ -14,6 +14,19 @@
     img { max-width: 100%; border-radius: 6px; margin: 1rem 0; }
     .meta { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
     ul { padding-left: 1.1rem; }
+
+    /* Row for side-by-side images */
+    .image-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .image-row img {
+      flex: 1 1 260px;
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
   </style>
 </head>
 <body>
@@ -39,7 +52,9 @@
     <li><strong>Result –</strong> A textured 3D model, orthomosaic and elevation products that engineers can use to visualise the site, measure distances and clearances, and plan upgrades.</li>
   </ul>
 
-  <img src="3d1.jpg" alt="3D model of BOST fuel storage facilities in Akosombo, Ghana">
+  <!-- MAIN IMAGE -->
+  <img src="bost1.jpg"
+       alt="Overview of the 3D model of BOST fuel storage facilities in Akosombo, Ghana">
 
   <h2>Data Acquisition</h2>
   <ul>
@@ -63,6 +78,13 @@
     <li>Provided orthomosaic and DSM layers that can be integrated into ArcGIS / Web GIS and CAD workflows.</li>
     <li>Enabled BOST engineers to visually inspect site conditions, measure clearances and plan future layout and safety improvements using current, high-resolution data.</li>
   </ul>
+
+  <!-- TWO ADDITIONAL VIEWS SIDE BY SIDE -->
+  <div class="image-row">
+    <img src="3d2.jpg" alt="Oblique 3D view of BOST fuel storage facilities">
+    <img src="3d3.jpg" alt="Close-up 3D view of tanks and jetty area at BOST Akosombo">
+  </div>
+
 </section>
 </body>
 </html>
