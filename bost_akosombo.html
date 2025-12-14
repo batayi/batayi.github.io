@@ -41,14 +41,15 @@
   <span class="tag">3D Modelling</span>
   <div class="meta">
     Client: Bulk Oil Storage and Transportation (BOST) · Location: Akosombo, Ghana<br>
-    Role: Project lead for UAV data capture and 3D modelling
+    Role: Project lead for UAV data capture and 3D modelling<br>
+    Tools: DJI Matrice Enterprise UAV · Agisoft Metashape · GIS/CAD viewers
   </div>
 
   <h2>Overview</h2>
   <ul>
     <li><strong>Goal –</strong> Build an accurate 3D model of BOST’s fuel storage depot and jetty at Akosombo to support inspection, safety checks and future site planning.</li>
     <li><strong>Data –</strong> High-overlap UAV imagery from multiple flights around tanks, bund walls, buildings and the shoreline.</li>
-    <li><strong>Workflow –</strong> Requirements + mission planning → UAV image capture → photogrammetric processing (dense point cloud, mesh, texture) → GIS/CAD-ready outputs.</li>
+    <li><strong>Workflow –</strong> Requirements + mission planning → UAV image capture with a DJI Matrice Enterprise → photogrammetric processing in Agisoft Metashape (dense point cloud, mesh, texture) → GIS/CAD-ready outputs.</li>
     <li><strong>Result –</strong> A textured 3D model, orthomosaic and elevation products that engineers can use to visualise the site, measure distances and clearances, and plan upgrades.</li>
   </ul>
 
@@ -59,15 +60,15 @@
   <h2>Data Acquisition</h2>
   <ul>
     <li>Clarified with BOST which assets were critical: storage tanks, pipe runs, bund walls, jetty and access roads.</li>
-    <li>Designed flight plans for a DJI enterprise drone with nadir and oblique imagery to capture both tank roofs and walls.</li>
+    <li>Designed flight plans for a <strong>DJI Matrice Enterprise</strong> UAV with nadir and oblique imagery to capture both tank roofs and walls.</li>
     <li>Led a small team on site to place ground control, run pre-flight checks and execute multiple flights with high overlap.</li>
     <li>Monitored image quality, overlap and coverage in the field, adjusting flight lines around tall structures and the jetty.</li>
   </ul>
 
   <h2>Processing & 3D Modelling</h2>
   <ul>
-    <li>Aligned images and generated a sparse reconstruction, followed by a dense point cloud of tanks, depot and shoreline.</li>
-    <li>Created a cleaned, textured 3D mesh suitable for visual inspection and measurement.</li>
+    <li>Imported all images into <strong>Agisoft Metashape</strong> and ran alignment to generate a sparse reconstruction.</li>
+    <li>Computed a dense point cloud of tanks, depot and shoreline, then built a cleaned, textured 3D mesh suitable for visual inspection and measurement.</li>
     <li>Derived orthomosaics and digital surface models, exported as GeoTIFF for use in GIS and engineering tools.</li>
     <li>Performed basic QA checks: positional accuracy against control points, artefact checks around tanks and jetty edges.</li>
   </ul>
