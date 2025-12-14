@@ -14,6 +14,19 @@
     img { max-width: 100%; border-radius: 6px; margin: 1rem 0; }
     .meta { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
     ul { padding-left: 1.1rem; }
+
+    /* Optional row for side-by-side images */
+    .image-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .image-row img {
+      flex: 1 1 260px;
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
   </style>
 </head>
 <body>
@@ -34,25 +47,19 @@
   <h2>Overview</h2>
   <ul>
     <li><strong>Goal –</strong> Provide an interactive Web GIS for the experimental fields at Campus Klein Altendorf, allowing researchers to explore field trials spatially and access rich metadata.</li>
-    <li><strong>Data –</strong> Field geometries from a GeoServer WFS (layer <code>geo:fields</code>) and non-spatial attributes from a relational database (fields, species, treatments).</li>
-    <li><strong>Workflow –</strong> Fetch WFS + DB data → combine into GeoJSON → display in a web map with popups, ontology links and search → fetch live weather info for the current map view.</li>
-    <li><strong>Result –</strong> A prototype Web GIS where users can click on fields to see crop information, open ontology descriptions, search by keywords and view current weather conditions over the site.</li>
+    <li><strong>Data –</strong> Field geometries from a GeoServer WFS (field layer) and non-spatial attributes from a relational database (fields, species, treatments).</li>
+    <li><strong>Workflow –</strong> Fetch WFS + DB data → combine into GeoJSON → display in a web map with popups, ontology links and search.</li>
+    <li><strong>Result –</strong> A prototype Web GIS where users can click on fields to see crop information, open ontology descriptions and search trials through a map interface.</li>
   </ul>
 
-  <!-- MAIN IMAGE (screenshot of the web map) -->
-  <img src="webgis.png"
-       alt="Web GIS prototype showing experimental fields, popups and tools at Campus Klein Altendorf">
+  <!-- MAIN SCREENSHOT -->
+  <img src="web1.jpg"
+       alt="Main Web GIS view showing experimental fields at Campus Klein Altendorf">
 
   <h2>Data Integration</h2>
   <ul>
     <li>Used a <strong>Web Feature Service (WFS)</strong> from GeoServer to obtain field geometries and IDs for the Campus Klein Altendorf experimental plots.</li>
-    <li>Joined WFS features with attributes from three database tables:
-      <ul>
-        <li><strong>Fields</strong> – field IDs, soil types, management info</li>
-        <li><strong>Species</strong> – plant species and varieties used in each plot</li>
-        <li><strong>Treatments</strong> – treatment types (e.g. fertilizer, sowing, management)</li>
-      </ul>
-    </li>
+    <li>Joined WFS features with attributes from database tables, including fields, species and treatments.</li>
     <li>Combined spatial and non-spatial data into a <strong>GeoJSON</strong> structure (geometry + properties) consumed directly by the web map.</li>
   </ul>
 
@@ -60,46 +67,35 @@
   <ul>
     <li>Implemented the backend in <strong>Java</strong> to:
       <ul>
-        <li>Request WFS data and parse GML for field geometries.</li>
+        <li>Request WFS data and parse geometries.</li>
         <li>Query the relational database and merge selected columns into feature properties.</li>
         <li>Output a cleaned GeoJSON feed for the client map.</li>
       </ul>
     </li>
     <li>Built the web map front-end with a JavaScript mapping library (Leaflet-style layout), including:
       <ul>
-        <li>Base map layer.</li>
-        <li>Field polygons styled by field boundaries.</li>
-        <li>Attribute popups with crop, soil and treatment information.</li>
+        <li>Base map layer for context.</li>
+        <li>Field polygons styled by plot boundaries.</li>
+        <li>Popups showing crop, treatment and field attributes.</li>
       </ul>
     </li>
   </ul>
 
-  <h2>Ontology & Search</h2>
+  <h2>Interface & Interactions</h2>
   <ul>
-    <li>Connected the map to an ontology hosted in <strong>Apache Jena Fuseki</strong>, created in Protégé and stored as RDF.</li>
-    <li>Exposed ontology descriptions of crops, treatments and related concepts via:
-      <ul>
-        <li>Links in the attribute popup that open ontology descriptions with English and German labels.</li>
-        <li>A search bar that triggers <strong>SPARQL</strong> queries to highlight relevant fields based on a keyword.</li>
-      </ul>
-    </li>
+    <li>Linked popup content to an ontology service so users can open concept descriptions (e.g. crop or treatment terms) in a separate pane.</li>
+    <li>Implemented keyword search that filters or highlights fields based on attributes.</li>
   </ul>
 
-  <h2>Weather Information</h2>
-  <ul>
-    <li>Added a weather widget accessible via a map icon to show current conditions over the site:
-      <ul>
-        <li>Date, temperature, humidity and wind speed.</li>
-      </ul>
-    </li>
-    <li>Designed this as an extra context layer to support interpretation of crop conditions on the day of inspection.</li>
-  </ul>
+  <!-- SECOND SCREENSHOT -->
+  <img src="web2.jpg"
+       alt="Detail view of Web GIS interface with popups and tools">
 
   <h2>Impact</h2>
   <ul>
     <li>Provides a single entry point where researchers can explore experimental fields spatially and see key attributes at a glance.</li>
     <li>Demonstrates how <strong>WFS + relational databases + ontologies</strong> can be combined into a FAIR, discoverable geospatial data system.</li>
-    <li>Showcases your ability to build a full Web GIS prototype: backend integration, GeoJSON generation, interactive map, search and external services.</li>
+    <li>Showcases full-stack Web GIS skills: backend integration, GeoJSON generation, interactive map design and attribute-driven exploration.</li>
   </ul>
 
 </section>
